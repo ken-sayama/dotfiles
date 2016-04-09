@@ -1,2 +1,0 @@
-ehco "HELLO WORLD"
-
