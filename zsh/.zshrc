@@ -92,6 +92,16 @@ fi
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
+# personal alias settings
 alias vi="vim"
 alias sketch="open -a sketch"
 alias ev="open -a evernote"
+alias la="ls -la"
+
+# git alias settings
+alias gs="git status"
+alias gc="git checkout"
+alias gcb="git checkout -b"
+alias gadd="git add ."
+alias gcm="git commit -m"
+alias gp="git push origin"
