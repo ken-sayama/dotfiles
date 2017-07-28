@@ -115,6 +115,9 @@ if dein#load_state('/Users/kensayama/.vim/dein')
   call dein#add('marcus/rsense')
   call dein#add('scrooloose/syntastic')
   call dein#add('Townk/vim-autoclose')
+  call dein#add('scrooloose/syntastic')
+  call dein#add('itchyny/lightline.vim')
+  call dein#add('othree/html5.vim') 
 
 
 
@@ -167,3 +170,6 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:rsenseUseOmniFunc = 1
 " 静的解析
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+
+" vimのステータスをリッチに
+set laststatus=2

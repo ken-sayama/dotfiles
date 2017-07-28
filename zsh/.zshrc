@@ -1,4 +1,4 @@
- If you come from bash you might have to change your $PATH.
+# If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -7,7 +7,7 @@ export ZSH=/Users/kensayama/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="af-magic"
+ZSH_THEME="miloshadzic"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -86,11 +86,13 @@ source $ZSH/oh-my-zsh.sh
 dir=~/.oh-my-zsh/custom/plugins/zsh-completions/src
 if [ -e $dir ]; then
 fpath=($dir $fpath)
-plugins+=(zsh-completions)
+plugins=(zsh-completions git ruby osx bundler brew rails emoji-clock)
 autoload -U compinit && compinit
 fi
 
+# export関連は以下に
 export XDG_CONFIG_HOME="$HOME/.config"
+export TERM=xterm-256color
 
 # personal alias settings
 alias vi="vim"
@@ -105,3 +107,10 @@ alias gcb="git checkout -b"
 alias gadd="git add ."
 alias gcm="git commit -m"
 alias gp="git push origin"
+alias gl="git log --graph --pretty=oneline"
+
+alias dc="docker-compose"
+alias du="docker-compose up -d"
+alias dd="docker-compose down -v"
+alias ds="docker ps"
+alias drm="docker rm -f $(docker ps -a -q)"

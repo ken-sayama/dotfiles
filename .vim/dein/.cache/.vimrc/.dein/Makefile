@@ -1,11 +1,11 @@
-all : emmet-vim.zip
+all : webapi-vim.zip
 
 remove-zip:
-	-rm doc/tags
-	-rm emmet-vim.zip
+	-rm -f doc/tags
+	-rm -f webapi-vim.zip
 
-emmet-vim.zip: remove-zip
-	zip -r emmet-vim.zip autoload plugin doc
+webapi-vim.zip: remove-zip
+	zip -r webapi-vim.zip autoload doc README
 
-release: emmet-vim.zip
-	vimup update-script emmet.vim
+release: webapi-vim.zip
+	vimup update-script webapi.vim
