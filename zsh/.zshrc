@@ -93,6 +93,7 @@ fi
 # export関連は以下に
 export XDG_CONFIG_HOME="$HOME/.config"
 export TERM=xterm-256color
+export PATH="/usr/local/bin:$PATH"
 
 # personal alias settings
 alias vi="vim"
@@ -114,3 +115,5 @@ alias du="docker-compose up -d"
 alias dd="docker-compose down -v"
 alias ds="docker ps"
 alias drm="docker rm -f $(docker ps -a -q)"
+export PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
