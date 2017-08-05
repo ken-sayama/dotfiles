@@ -100,6 +100,7 @@ alias vi="vim"
 alias sketch="open -a sketch"
 alias ev="open -a evernote"
 alias la="ls -la"
+alias less="/usr/share/vim/vim74/macros/less.sh"
 
 # git alias settings
 alias gs="git status"
