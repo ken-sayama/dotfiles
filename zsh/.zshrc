@@ -118,5 +118,10 @@ alias du="docker-compose up -d"
 alias dd="docker-compose down -v"
 alias ds="docker ps"
 alias drm="docker rm -f $(docker ps -a -q)"
+alias da="docker attach"
+
+# npm
+export PATH="/usr/local/share/npm/bin:$PATH"
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
