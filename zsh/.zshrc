@@ -117,7 +117,6 @@ alias dc="docker-compose"
 alias du="docker-compose up -d"
 alias dd="docker-compose down -v"
 alias ds="docker ps"
-alias drm="docker rm -f $(docker ps -a -q)"
 alias da="docker attach"
 
 # npm
