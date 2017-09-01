@@ -29,6 +29,7 @@ set cursorcolumn
 set showmatch
 set ambiwidth=double
 set tabstop=2
+set shiftwidth=2
 set expandtab
 set smartindent
 set list
