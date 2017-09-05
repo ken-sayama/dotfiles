@@ -1,20 +1,14 @@
-==========
-README.txt
-==========
+RSense
+======
 
-    This  plugin was  born  as a  personal  need to  get  some little  special
-features from other editors into my  preferred one. The Eclipse IDE editor has
-an  auto-complete for  open-close pair  of  characters feature  that I  always
-wanted into Vim.
+Documentation
+-------------
+This is a mirror of http://cx4a.org/software/rsense/ modified to work with pathogen and vim-update-bundles
 
-    As  soon as  you type  a character  that could  have a  matching (closing)
-counterpart,  Eclipse automatically  puts  its counterpart  in  front of  your
-cursor, and it is smart enough  to ignore the closing character afterwards, if
-typed, but just moves your cursor one character forward.
+* http://cx4a.org/software/rsense/
+* doc/index.txt
 
-    But  the Eclipse  editor  does not  stop  there. If  you  type an  opening
-character on any part of your code  that should not have a pair completion, it
-will not insert the closing character for you.
+License
+-------
 
-    The AutoClose plugin is an attempt to reproduce this behavior for Vim.
-
+RSense is distributed under the term of GPLv3+. And its documentations under doc directory is distributed under the term of GFDL.

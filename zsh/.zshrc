@@ -7,7 +7,7 @@ export ZSH=/Users/kensayama/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="miloshadzic"
+ZSH_THEME="bira"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -118,6 +118,13 @@ alias du="docker-compose up -d"
 alias dd="docker-compose down -v"
 alias ds="docker ps"
 alias da="docker attach"
-alias drm="docker rm -f $(docker ps -a -q)"
+
+# scp
+alias scpkaigo="scp kaigo:/home/ec2-user/kaigo_dump.sql /Users/kensayama/Desktop"
+alias scpdeco="scp deco:/home/ec2-user/deco_dump.sql /Users/kensayama/Desktop"
+
+# npm
+export PATH="/usr/local/share/npm/bin:$PATH"
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
