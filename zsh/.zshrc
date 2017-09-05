@@ -117,6 +117,7 @@ alias dc="docker-compose"
 alias du="docker-compose up -d"
 alias dd="docker-compose down -v"
 alias ds="docker ps"
+alias da="docker attach"
 alias drm="docker rm -f $(docker ps -a -q)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
