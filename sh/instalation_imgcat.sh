@@ -1,7 +1,7 @@
 #!/usr/local/bin/bash
 
 # シェルスクリプトを記述するファイル名
-file_name=sample
+file_name=imgcat
 
 # curlでシェルスクリプトを取得
 set=$(curl https://raw.githubusercontent.com/gnachman/iTerm2/master/tests/imgcat)
