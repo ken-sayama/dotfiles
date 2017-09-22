@@ -1,11 +1,18 @@
-This plugin causes all trailing whitespace to be highlighted in red.
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=273
 
-To fix the whitespace errors, just call :FixWhitespace.  By default it
-operates on the entire file.  Pass a range (or use V to select some lines)
-to restrict the portion of the file that gets fixed.
+The "Tag List" plugin is a source code browser plugin for Vim and
+provides an overview of the structure of source code files and allows
+you to efficiently browse through source code files for different
+programming languages.  You can visit the taglist plugin home page for
+more information:
 
-The repo is at http://github.com/bronson/vim-trailing-whitespace
+      http://vim-taglist.sourceforge.net
 
-Originally based on http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+You can subscribe to the taglist mailing list to post your questions
+or suggestions for improvement or to report bugs. Visit the following
+page for subscribing to the mailing list:
 
-An more complete alternative is at https://github.com/ntpeters/vim-better-whitespace
+      http://groups.yahoo.com/group/taglist/
+
+For more information about using this plugin, after installing the
+taglist plugin, use the ":help taglist" command.

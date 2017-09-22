@@ -1,4 +1,1 @@
-install.log
-.record
-.mkrecord
-*.vba
+doc/tags

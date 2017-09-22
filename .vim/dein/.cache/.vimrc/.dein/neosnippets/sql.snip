@@ -1,63 +1,79 @@
-snippet     CREATE TABLE
-abbr        CREATE TABLE { ... }
-options     head
-  CREATE TABLE ${1:cities} (
-    ${0:name varchar(80), country_name text}
-  );
+# SQL {{{
+snippet select
+abbr SELECT
+	SELECT ${0:colmn}
+snippet from
+abbr FROM
+	FROM ${1:table} AS ${0:abbreviation}
+snippet from_inner
+abbr FROM INNER JOIN
+	FROM ${1:table} AS ${2:abbreviation}
+	INNER JOIN ${3:table} AS ${4:abbreviation}
+	ON $2.${5:condition} = $4.${0:condition}
+snippet from_left
+abbr FROM LEFT JOIN
+	FROM ${1:table} AS ${2:abbreviation}
+	LEFT JOIN ${3:table} AS ${4:abbreviation}
+	ON $2.${5:condition} = $4.${0:condition}
+snippet inner
+abbr INNER JOIN
+	INNER JOIN ${1:table} AS ${2:abbreviation}
+	ON ${0:condition}
+snippet left
+abbr LEFT JOIN
+	LEFT JOIN ${1:table} AS ${2:abbreviation}
+	ON ${0:condition}
+snippet where
+abbr WHERE
+	WHERE ${0:condition}
+snippet and
+abbr AND
+	AND ${0:condition}
+snippet or
+abbr OR
+	OR ${0:condition}
+snippet group_by
+abbr GROUP BY
+	GROUP BY ${0:condition}
+snippet group_concat
+abbr GROUP_CONCAT
+	GROUP_CONCAT(${1:DISTINCT }${2:colmn,colmn}${3: ORDER BY}${4:order_by}${5: SEPARATOR}${6:separator}) AS ${7:abbreviation}
+	GROUP BY ${0:condition}
+snippet limit
+abbr LIMIT
+	LIMIT ${0:condition}
+snippet insert_into
+abbr INSERT INTO
+	INSERT INTO ${1:table} (${0:condition})
+snippet insert_into_select
+abbr INSERT INTO SELECT
+	INSERT INTO ${1:table} (${2:condition})
+		SELECT ${0:condition}
+snippet values
+abbr VALUES
+	VALUES (${0:condition})
+snippet duplicate
+abbr DUPLICATE
+	ON DUPLICATE KEY UPDATE ${0:condition}
+snippet update
+abbr UPDATE SET
+	UPDATE ${1:table} ${2:abbreviation} SET $2.${3:condition}
+snippet update_inner
+abbr UPDATE INNER JOIN SET
+	UPDATE ${1:table} ${2:abbreviation}
+		INNER JOIN ${3:table} AS ${4:abbreviation}
+		ON $2.${5:colmn} = $4.${6:colmn}
+		SET ${7:condition}
+snippet delete
+abbr DELETE
+	DELETE FROM ${1:table}
+		WHERE ${2:condition}
+snippet delete_inner
+abbr DELETE INNER JOIN
+	DELETE ${1:table} FROM $1 AS ${2:abbreviation}
+		INNER JOIN ${3:table} AS ${4:abbreviation}
+		ON $2.${5:colmn} = $4.${6:colmn}
+		WHERE ${7:condition}
+#}}}
 
-snippet     CREATE INDEX
-abbr        CREATE INDEX ... ON ... ( ... )
-options     head
-  CREATE INDEX ${1:_name} ON ${2:cities} (${3:name});
-
-snippet     DROP TABLE
-abbr        DROP TABLE IF EXISTS ...
-  DROP TABLE IF EXISTS ${1:table};
-
-snippet     ALTER TABLE
-abbr        ALTER TABLE ... MODIFY ...
-  ALTER TABLE ${1:table}
-  MODIFY ${2:column} ${3:new_column_desc};
-
-snippet     TRUNCATE TABLE
-abbr        TRUNCATE TABLE ...
-  TRUNCATE TABLE ${1:table};
-
-snippet     INSERT DATA
-abbr        INSERT INTO ... VALUES ( ... )
-options     head
-  INSERT INTO ${1:cities}
-  VALUES (${0:'Vancouver', 'Canada'});
-
-snippet     UPDATE DATA
-abbr        UPDATE ... SET ... WHERE ...
-  UPDATE ${1:table}
-  SET ${2:column} = ${3:value}
-  WHERE ${4:condition};
-
-snippet     SELECT DATA
-abbr        SELECT * from ... ORDER BY ... LIMIT ...
-options     head
-  SELECT ${1:*}
-  FROM ${2:cities} ${3:WHERE area = 'Asia'}
-  ${4: ORDER BY distance}
-  ${5: LIMIT 30};
-
-snippet     SELECT JOIN DATA
-abbr        SELECT * FROM T1 JOIN T2 ... ON
-  SELECT ${1:*}
-  FROM ${2:table1} ${3:T1}
-  JOIN ${4:table2} ${5:T2}
-  ON T1.${6:column1} = T2.${7:column2}
-
-snippet     DELETE DATA
-abbr        DELETE FROM ... WHERE ...
-  DELETE FROM ${1:table}
-  WHERE ${2:condition};
-
-snippet     TRANSACTION
-alias       BEGIN TRANSACTION
-options     head
-  BEGIN TRANSACTION;
-  ${0:TARGET}
-  COMMIT;
+# vim:fdl=0:ft=neosnippet

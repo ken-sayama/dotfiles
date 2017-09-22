@@ -122,6 +122,7 @@ alias da="docker attach"
 # scp
 alias scpkaigo="scp kaigo:/home/ec2-user/kaigo_dump.sql /Users/kensayama/Desktop"
 alias scpdeco="scp deco:/home/ec2-user/deco_dump.sql /Users/kensayama/Desktop"
+alias scph="scp hoiku:/home/ec2-user/hservice_dump.sql /Users/kensayama/Desktop"
 
 # npm
 export PATH="/usr/local/share/npm/bin:$PATH"
