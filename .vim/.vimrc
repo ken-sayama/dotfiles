@@ -1,6 +1,6 @@
 " colorscheme settings
-colorscheme phosphor
-set background=dark
+colorscheme thaumaturge
+"set background=dark
 
 " Invalid noremap
 noremap <Up> <Nop>
