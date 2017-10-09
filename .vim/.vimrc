@@ -1,6 +1,6 @@
 " colorscheme settings
-colorscheme elrodeo
-set background=dark
+colorscheme thaumaturge
+"set background=dark
 
 " Invalid noremap
 noremap <Up> <Nop>
@@ -12,6 +12,12 @@ inoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 
+" auto comment off
+augroup auto_comment_off
+  autocmd!
+  autocmd BufEnter * setlocal formatoptions-=r
+  autocmd BufEnter * setlocal formatoptions-=o
+augroup END
 
 syntax on
 " 行番号を表示
@@ -43,7 +49,9 @@ set wildmode=list:longest
 nnoremap j gj
 nnoremap k gk
 
-" 検索系
+" ------------------------------
+"  ---        検索系         ---
+"  -----------------------------
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set ignorecase
 " 検索文字列に大文字が含まれている場合は区別して検索する
@@ -57,7 +65,11 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
-
+" $VIMRUNTIME/syntax/php.vim
+let g:php_baselib       = 1
+let g:php_htmlInStrings = 1
+let g:php_noShortTags   = 1
+let g:php_sql_query     = 1
 
 "dein Scripts-----------------------------
 if &compatible
@@ -118,9 +130,20 @@ if dein#load_state('/Users/kensayama/.vim/dein')
   call dein#add('Townk/vim-autoclose')
   call dein#add('scrooloose/syntastic')
   call dein#add('itchyny/lightline.vim')
-  call dein#add('othree/html5.vim') 
+  call dein#add('othree/html5.vim')
 
-
+  call dein#add('KazuakiM/neosnippet-snippets')
+  call dein#add('KazuakiM/vim-qfstatusline')
+  call dein#add('Shougo/dein.vim')
+  call dein#add('Shougo/neocomplete.vim')
+  call dein#add('Shougo/neoinclude.vim')
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+  call dein#add('thinca/vim-quickrun')
+  call dein#add('thinca/vim-ref')
+  call dein#add('vim-scripts/taglist.vim')
+  call dein#add('osyo-manga/shabadou.vim')
+  call dein#add('osyo-manga/vim-watchdogs')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })

@@ -1,331 +1,303 @@
-snippet function
-abbr public function () {}
-	${1:public }function ${2:#:FunctionName}(${3})
-	{
-		${4:TARGET}
-	}
+# Debug message {{{
+snippet log
+abbr Echo debug helper in console
+	echo('['. __class__ .':'. __function__ .':'. __line__ .']$0:'. print_r(${0}, true) ."\n");
+snippet logg
+abbr Exit Echo debug helper in console
+	echo('['. __class__ .':'. __function__ .':'. __line__ .']$0:'. print_r(${0}, true) ."\n");exit(9);
+snippet logmsg
+abbr Log template
+	'['. __class__ .':'. __function__ .':'. __line__ .']:'
+snippet logbr
+abbr Echo debug helper in HTML
+	echo('['. __class__ .':'. __function__ .':'. __line__ .']$0:'. print_r(${0}, true) .'<br />');
+snippet logfile
+abbr Output logfile debug helper
+	file_put_contents('/tmp/sniplog', '<'.date('Y-m-d H:i:s').'>['. __class__ .':'. __function__ .':'. __line__ .']$0:'. print_r(${0}, true) ."\n",FILE_APPEND|LOCK_EX);
+snippet cilog
+abbr Codeigniter log template
+	log_message('debug', '['. __class__ .':'. __function__ .':'. __line__ .']$0:'. print_r(${0}, true));
+snippet pd
+abbr Dumb debug helper in HTML
+	echo('<pre>');var_dump(${0:variable});echo('</pre>');
+snippet pdd
+abbr Exit Dumb debug helper in HTML
+	echo('<pre>');var_dump(${0:variable});echo('</pre>');exit(9);
+snippet vd
+abbr dumb debug helper
+	var_dump(${0:variable});
+snippet vdd
+abbr Exit dumb debug helper
+	var_dump(${0:variable});exit(9);
+snippet logtest
+abbr phpunit
+	fwrite(STDERR, "\n[". __class__ .':'. __function__ .':'. __line__ .']$0:'. print_r(${0}, true) ."\n");
+#}}}
 
-snippet function_literal
-options word
-abbr function () {}
-	function (${1})${2: use } {
-		${3:TARGET}
-	}
+# Reserved word {{{
+snippet C
+abbr Env variable COOKIE
+	$_COOKIE['${0:key}']
+snippet E
+abbr Env variable ENV
+	$_ENV['${0:key}']
+snippet F
+abbr Env variable FILES
+	$_FILES['${0:key}']
+snippet G
+abbr Env variable GET
+	$_GET['${0:key}']
+snippet P
+abbr Env variable POST
+	$_POST['${0:key}']
+snippet R
+abbr Env variable REQUEST
+	$_REQUEST['${0:key}']
+snippet S
+abbr Env variable SERVER
+	$_SERVER['${0:key}']
+snippet SS
+abbr Env variable SESSION
+	$_SESSION['${0:key}']
+#}}}
 
-snippet php
-	<?php
-	${1:TARGET}
-    /* End of file ${2:filename}.php */
-
-snippet pecho
-	<?php echo ${1} ?>${0}
-
-snippet echoh
-	<?php echo htmlentities(${1}, ENT_QUOTES, 'utf-8') ?>${0}
-
-snippet pforeach
-	<?$php foreach ($${1:#:variable} as $${2:#:key}${3: =>}): ?>
-	${0:TARGET}
-	<?php endforeach; ?>
-
-snippet pifelse
-	<?php if (${1:#:condition}): ?>
-	${2:TARGET}
-	<?php else: ?>
-	${0}
-	<?php endif; ?>
-
-snippet pif
-	<?php if (${1:#:condition}): ?>
-	${0:TARGET}
-	<?php endif; ?>
-
-snippet pelse
-	<?php else: ?>
-
-snippet pthis
-	<?php $this->${0} ?>
-
-snippet pethis
-	<?php echo $this->${0} ?>
-
-snippet doc_class_var
-	/**
-	 * ${3:#:undocumented class variable}
-	 *
-	 * @var ${4:#:string}
-	 **/
-	${1:#:var} $${2};${0}
-
-snippet doc_constant
-	/**
-	 * ${3:#:undocumented constant}
-	 **/
-	define(${1} ${2});${0}
-
-snippet doc_interface_function
-	/**
-	 * ${4:#:undocumented function}
-	 *
-	 * @return ${5:void}
-	 * @author ${6}
-	 **/
-	${1}function ${2}(${3});${0}
-
-snippet doc_function
-	/**
-	 * ${4:#:undocumented function}
-	 *
-	 * @return ${5:void}
-	 * @author ${6}
-	 **/
-	${1}function ${2}(${3})
-	{
-		${0:TARGET}
-	}
-
-
-snippet doch
-	/**
-	 * ${1}
-	 *
-	 * @author ${2}
-	 * @version ${3}
-	 * @copyright ${4}
-	 * @package ${5:default}
-	 **/
-
-	/**
-	 * Define DocBlock
-	 **/
-
-snippet doci
-	/**
-	 * ${2:#:undocumented class}
-	 *
-	 * @package ${3:default}
-	 * @author ${4}
-	 **/
-	interface ${1}
-	{
-		${0:TARGET}
-	} // END interface $1
-
-snippet doc
-	/**
-	 * ${0}
-	 */
-
-snippet class_with_constructor
-	/**
-	 * ${1}
-	 */
-	class ${2:#:ClassName}${3:#:extends}
-	{
-		$5
-		function ${4:__construct}(${5:#:argument})
-		{
-			${0:# code...}
-		}
-	}
-
-snippet class
-options head
-	class ${2:#:ClassName} {
-		${0:TARGET}
-	}
-
-snippet def
-	${1}defined('${2}')${0}
-
-
-snippet dowhile
-options head
-	do {
-		${0:TARGET}
-	} while (${1:#:condition});
-
-snippet if?
-options head
-	$${1:#:retVal} = (${2:#:condition}) ? ${3:#:a} : ${4:#:b};
-
-snippet ifelse
-options head
-	if (${1:#:condition}) {
-		${2:TARGET}
-	} else {
-		${3:#:code...}
-	}
-	${0}
-
-snippet if
-options head
-	if (${1:#:condition}) {
-		${0:TARGET}
-	}
-
-snippet var_dump
-options head
-  var_dump(${0:TARGET});
-
-snippet p
-options head
-  print_r(${1});
-
-snippet echo
-options head
-	echo "${1:#:string}";
-
-snippet println
-options head
-	printf("${1:#:string}\n"${2:, });
-
-snippet else
-	else {
-		${0:TARGET}
-	}
-
-snippet elseif
-	elseif (${1:#:condition}) {
-		${0:TARGET}
-	}
-
-snippet for
-options head
-	for ($${1:i}=${2:0}; $$1 < ${3}; $$1++) {
-		${0:TARGET}
-	}
-
-snippet foreach-hashmap
-	foreach ($${1:#:variable} as $${2:#:key}${3: =>} $${4:#:value}) {
-		${0:TARGET}
-	}
-
-snippet foreach-list
-options head
-	foreach ($${1:#:variable} as $${2:#:x}) {
-		${0:TARGET}
-	}
-
-snippet construct
-options head
-	function __construct(${1})
-	{
-		${0:TARGET}
-	}
-
-snippet here
-	<<<${1:HTML}
-	${2:TARGET:#:content here}
-	$1;
-
+# Language control structures {{{
 snippet inc
-options head
-	include '${1:#:file}';${0}
-
-snippet inco
-options head
-	include_once '${1:#:file}';${0}
-
-snippet array
-	$${1:#:arrayName} = array('${2}' => ${3} ${0});
-
+abbr include
+	include '${0:file}';
+snippet inc1
+abbr include_once
+	include_once '${0:file}';
 snippet req
-options head
-	require '${1:#:file}';${0}
+abbr require
+	require '${0:file}';
+snippet req1
+abbr require_once
+	require_once '${0:file}';
+snippet def
+abbr define
+	define('${1:variable}', ${0:value});
+#}}}
 
-snippet reqo
-options head
-	require_once '${1:#:file}';${0}
+# Visibility {{{
+snippet public
+abbr Public Visibility
+	public ${1:static }${0}
+snippet protected
+abbr Protected Visibility
+	protected ${1:static }${0}
+snippet private
+abbr Private Visibility
+	private ${1:static }${0}
+#}}}
 
-snippet ret
-options head
-	return${1};${0}
-
-snippet retf
-options head
-	return false;
-
-snippet rett
-options head
-	return true;
-
-snippet case
-options head
-	case '${1:#:variable}':
-		${0:#:code...}
-		break;
-
-snippet switch
-abbr sw
-options head
-	switch (${1:#:variable}) {
-	case '${2:#:value}':
-		${3:#:code...}
-		break;
-	${0}
-	default:
-		${4:#:code...}
-		break;
+# Class {{{
+snippet class
+abbr Class default
+	<?php
+	final class `expand("%:r")`
+	{
+		// Class variable {{{
+		//}}}
+	
+		public function __construct(${2}) //{{{
+		{
+			${0:parent::__construct();}
+		} //}}}
+	
+		public function __destruct() //{{{
+		{
+			${3:parent::__destruct();}
+		} //}}}
 	}
+snippet class_variable
+abbr Class variable
+	// Class variable {{{
+	//}}}
+snippet const_set
+abbr const set
+	const ${1:variable} = ${2:value};
 
-snippet try
-options head
-	try {
-		${1:TARGET}
-	} catch (${2:#:Exception} $e) {
-		${3:#:code}
+	public static function get${3:Name}Array(): array //{{{
+	{
+		return [
+			self::${1}${4: => ''},
+		];
+	} //}}}
+#}}}
+
+# Function {{{
+snippet public_function
+abbr Public Function
+	public ${1:static }function ${2}(${3})${4:type hinting} //{{{
+	{
+		${0://code...}
+	} //}}}
+snippet protected_function
+abbr Protected Function
+	protected ${1:static }function ${2}(${3})${4:type hinting} //{{{
+	{
+		${0://code...}
+	} //}}}
+snippet private_function
+abbr Private_Function
+	private ${1:static }function _${2}(${3})${4:type hinting} //{{{
+	{
+		${0://code...}
+	} //}}}
+snippet construct "__construct"
+abbr __construct
+	public function __construct(${1}) //{{{
+	{
+		${0:parent::__construct();}
+	} //}}}
+snippet setter
+abbr Setter
+	public function set${1:camelCase}($${0:value}): void //{{{
+	{
+		$this->_$0 = $$0;
+	} //}}}
+snippet getter
+abbr Getter
+	public function get${1:camelCase}()${2:type hinting} //{{{
+	{
+		return $this->_${0:value};
+	} //}}}
+snippet sgetter
+abbr Setter and Getter
+	public function set${1:camelCase}($${2:value}): void //{{{
+	{
+		$this->_$2 = $$2;
+	} //}}}
+
+	public function get$1()${0:type hinting} //{{{
+	{
+		return $this->_$2;
+	} //}}}
+snippet gsetter
+abbr Setter and Getter
+	public function set${1:camelCase}($${2:value}): void //{{{
+	{
+		$this->_$2 = $$2;
+	} //}}}
+
+	public function get$1()${0:type hinting} //{{{
+	{
+		return $this->_$2;
+	} //}}}
+#}}}
+
+# foreach {{{
+snippet foreach
+abbr foreach array as value
+	foreach (${1:array} as ${2:value}) {
+		${0://code...}
 	}
-
-snippet tryf
-options head
-	try {
-		${1:TARGET}
-	} catch (${2:#:Exception} $e) {
-		${3:#:code}
-	} finally {
-		${4:#:code}
+snippet foreachk
+abbr foreach array as key => value
+	foreach (${1:array} as ${2:key} => ${3:value}) {
+		${0://code...}
 	}
+#}}}
 
-snippet throw
-options head
-	throw new ${1}Exception(${2:"${3:#:Error Processing Request}"}${4:});
-	${0}
+# for {{{
+snippet for
+abbr for
+	for (${1:index} = 0; $1 < ${2}; $1${3:++}) {
+		${0://code...}
+	}
+#}}}
 
+# while {{{
 snippet while
-abbr wh
-options head
-	while (${1}) {
-		${0:TARGET}
+abbr while
+	while (${1:/* condition */}) {
+		${0://code...}
 	}
+#}}}
 
-snippet gloabals
-	\$GLOBALS['${1:#:variable}']${2: = }${3:#:something}${4:;}${0}
+# if {{{
+snippet if
+abbr if
+	if (${1:/* condition */}) {
+		${0://code...}
+	}
+snippet else
+abbr else
+	else {
+		${0://code...}
+	}
+snippet elseif
+abbr elseif
+	elseif (${1:/* condition */}) {
+		${0://code...}
+	}
+#}}}
 
-snippet cookie
-	\$_COOKIE['${1:#:variable}']
+# switch {{{
+snippet switch
+abbr switch
+	switch (${1:variable}) {
+	case ${2:/* condition */}:
+		${0://code...}
+		break;
+	default:
+		break;
+	}
+snippet case
+abbr switch - case
+	case ${1:/* condition */}:
+		${0://code...}
+		break;
+#}}}
 
-snippet env
-	\$_ENV['${1:#:variable}']
+# try {{{
+snippet throw
+abbr throw
+	throw new Exception(${0://message...});
+snippet try
+abbr try
+	try {
+		${0://code...}
+	} catch (Exception $e) {
+		$e->getMessage()
+	}
+snippet finally
+abbr finally
+	finally {
+	}
+#}}}
 
-snippet files
-	\$_FILES['${1:#:variable}']
+# FILE {{{
+snippet csv
+abbr csv
+	$mp = fopen('php://memory', 'bw+');
+	foreach (${1:array} as ${2:value}) {
+		fputcsv($mp, $2, ${3:','}, ${4:'"'});
+	}
+	rewind($mp);
+	${0://$buf = str_replace("\n", "\r\n", stream_get_contents($mp));}
+	$buf = stream_get_contents($mp);
+	fclose($mp);
 
-snippet get
-	\$_GET['${1:#:variable}']
+	$fp = fopen(${5:file}, 'w');
+	fwrite($fp, $buf);
+	fclose($fp);
+#}}}
 
-snippet post
-	\$_POST['${1:#:variable}']
+# tips {{{
+snippet delete_space_new_line
+abbr delete space new line
+	${1:array} = array_filter(array_map('trim', explode("\n", str_replace(["\r\n","\r","\n"], "\n", ${0:string}))), 'strlen');
+snippet array_sort
+abbr array sort
+	if(array_multisort(array_column(${1:array}, '${2:key}'), SORT_ASC, $1) === false) {
+		throw new Exception(${3://message...});
+	}
+snippet json_response
+abbr json response
+	header('Content-Type:application/json;charset=utf-8');
+	echo json_encode(${0:value});
+#}}}
 
-snippet request
-	\$_REQUEST['${1:#:variable}']
-
-snippet server
-	\$_SERVER['${1:#:variable}']
-
-snippet session
-	\$_SESSION['${1:#:variable}']
-
-snippet var_export
-alias inspect
-  var_export(${1}, true)
+# vim:fdl=0:ft=neosnippet

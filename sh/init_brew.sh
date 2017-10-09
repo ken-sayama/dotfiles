@@ -4,9 +4,16 @@
 BREWS=(
 autoconf
 bash
+cairo
+fontconfig
+fontforge
+freetype
 gdbm
+gettext
 git
 git-flow
+glib
+go
 hub
 libevent
 openssl

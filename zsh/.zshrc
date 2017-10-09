@@ -7,7 +7,7 @@ export ZSH=/Users/kensayama/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="bira"
+ZSH_THEME="jonathan"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -122,6 +122,7 @@ alias da="docker attach"
 # scp
 alias scpkaigo="scp kaigo:/home/ec2-user/kaigo_dump.sql /Users/kensayama/Desktop"
 alias scpdeco="scp deco:/home/ec2-user/deco_dump.sql /Users/kensayama/Desktop"
+alias scph="scp hoiku:/home/ec2-user/hservice_dump.sql /Users/kensayama/Desktop"
 
 # npm
 export PATH="/usr/local/share/npm/bin:$PATH"

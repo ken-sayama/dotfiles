@@ -122,7 +122,10 @@ function! s:converter(candidates, context) abort "{{{
     endif
 
     " Set default abbr.
-    let candidate.abbr = neomru#_abbr(path, getftime(candidate.action__path))
+    let candidate.abbr = (g:neomru#time_format == '') ? '' :
+          \ strftime(g:neomru#time_format,
+          \ getftime(candidate.action__path))
+    let candidate.abbr .= path
   endfor
 
   return a:candidates
