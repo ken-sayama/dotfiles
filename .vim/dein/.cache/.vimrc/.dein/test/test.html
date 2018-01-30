@@ -241,6 +241,7 @@
   display: flow;
   display: flow-root;
   display: contents;
+  display: inline-list-item;
   display: discard;
 }
 </style>
@@ -357,20 +358,10 @@
 </style>
 <style>
 .fonts-4 {
-  font-min-size: emoji;
-  font-max-size: math;
-  font-display: fangsong;
-  font-optical-sizing: system-ui;
-  font-variation-settings: infinity;
-  font-palette: swap;
-  font-presentation: fallback;
-  display: optional;
-  display: light;
-  display: dark;
-}
-
-@font-palette-values Test {
-  base-palette: 1;
+  font-optical-sizing: emoji;
+  font-variation-settings: math;
+  display: fangsong;
+  display: system-ui;
 }
 </style>
 <style>
@@ -533,11 +524,10 @@
 </style>
 <style>
 .motion-1 {
-  offset-path: ray(45deg closest-side);
-  offset-distance: path(M 100 100 L 300 100 L 200 300 z);
-  offset-anchor: auto;
-  offset-rotate: auto;
-  offset: auto;
+  motion-path: path(M 100 100 L 300 100 L 200 300 z);
+  motion-offset: auto;
+  motion-rotation: auto;
+  motion: auto;
 }
 </style>
 <style>

@@ -131,3 +131,4 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export PATH=/Applications/MAMP/bin/php/php7.1.8/bin:$PATH
+export PATH=$HOME/.nodebrew/current/bin:$PATH

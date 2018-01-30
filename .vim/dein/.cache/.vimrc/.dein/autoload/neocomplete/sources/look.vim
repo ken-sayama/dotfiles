@@ -19,7 +19,8 @@ function! s:source.gather_candidates(context)
   endif
 
   let list = split(neocomplete#util#system(
-        \ 'look ' . a:context.complete_str), "\n")
+        \ 'look ' . a:context.complete_str .
+        \ '| head -n ' . self.max_candidates), "\n")
   if neocomplete#util#get_last_status()
     return []
   endif

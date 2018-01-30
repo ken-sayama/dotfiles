@@ -1,18 +1,42 @@
-This is a mirror of http://www.vim.org/scripts/script.php?script_id=273
+==============================================================================
+INTRODUCTION						*vimshell-introduction*
 
-The "Tag List" plugin is a source code browser plugin for Vim and
-provides an overview of the structure of source code files and allows
-you to efficiently browse through source code files for different
-programming languages.  You can visit the taglist plugin home page for
-more information:
+==============================================================================
+USAGE							*vimshell-usage*
 
-      http://vim-taglist.sourceforge.net
+You can start vimshell in ":VimShell".  Because vimshell works similar with
+a common shell, you may operate it intuitively.  But vimshell perform the
+path appointment in '/'. Vimshell is misunderstood with escape sequence when
+you use '\' by Windows for a path and do not work.
 
-You can subscribe to the taglist mailing list to post your questions
-or suggestions for improvement or to report bugs. Visit the following
-page for subscribing to the mailing list:
+==============================================================================
+INSTALL							*vimshell-install*
 
-      http://groups.yahoo.com/group/taglist/
+vimshell needs |vimproc|
+http://github.com/Shougo/vimproc
 
-For more information about using this plugin, after installing the
-taglist plugin, use the ":help taglist" command.
+Please install vimproc Ver.5.0(or later) before use vimshell.
+And make proc.so
+
+Make method:
+
+* Mingw: >
+	$ make -f make_mingw.mak
+
+* Mac OS X: >
+	$ make -f make_mac.mak
+
+* Linux BSD: >
+	$ make -f make_gcc.mak
+
+* Visual Studio: >
+	$ make -f make_msvc.mak
+
+* Cygwin: >
+	$ make -f make_cygwin.mak
+
+After compile, copy autoload/vimproc.vim and autoload/vimproc/parser.vim and
+autoload/proc.so(or proc.dll) to autoload directory.
+Note: "proc.dll" compiled in Cygwin environment is only Cygwin Vim. Can't use
+in Windows Vim.
+
