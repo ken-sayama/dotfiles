@@ -7,7 +7,7 @@ export ZSH=/Users/kensayama/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="jonathan"
+ZSH_THEME="avit"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -106,8 +106,8 @@ alias less="/usr/share/vim/vim80/macros/less.sh"
 
 # git alias settings
 alias gs="git status"
-alias gc="git checkout"
-alias gcb="git checkout -b"
+alias gb="git checkout -b"
+alias gm="git checkout master"
 alias gadd="git add ."
 alias gcm="git commit -m"
 alias gp="git push origin"
@@ -118,11 +118,7 @@ alias du="docker-compose up -d"
 alias dd="docker-compose down -v"
 alias ds="docker ps"
 alias da="docker attach"
-
-# scp
-alias scpkaigo="scp kaigo:/home/ec2-user/kaigo_dump.sql /Users/kensayama/Desktop"
-alias scpdeco="scp deco:/home/ec2-user/deco_dump.sql /Users/kensayama/Desktop"
-alias scph="scp hoiku:/home/ec2-user/hservice_dump.sql /Users/kensayama/Desktop"
+de () { docker exec -it $1 /bin/bash  }
 
 # npm
 export PATH="/usr/local/share/npm/bin:$PATH"
@@ -132,3 +128,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export PATH=/Applications/MAMP/bin/php/php7.1.8/bin:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH="$PATH:/Users/kensayama/.config/composer/vendor/bin"
+
+autoload -U promptinit; promptinit
+prompt pure

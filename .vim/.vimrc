@@ -1,6 +1,5 @@
 " colorscheme settings
-colorscheme thaumaturge
-"set background=dark
+colorscheme iceberg
 
 " Invalid noremap
 noremap <Up> <Nop>
@@ -20,11 +19,8 @@ augroup auto_comment_off
 augroup END
 
 syntax on
-" 行番号を表示
 set number
-" 文字コードをutf-8に設定
 set fenc=utf-8
-" タブにタイトルを設定
 set title
 set nobackup
 set noswapfile
