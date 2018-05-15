@@ -1,7 +1,7 @@
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-autoload -U promptinit; promptinit$
+autoload -U promptinit; promptinit
 # プロンプトを変更
 prompt pure
 
