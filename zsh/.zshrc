@@ -6,6 +6,9 @@ autoload -U promptinit; promptinit
 prompt pure
 
 setopt auto_cd
+setopt auto_list
+setopt auto_menu
+
 
 zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-completions'
@@ -21,6 +24,7 @@ zplug "junegunn/fzf", use:shell/key-bindings.zsh
 zplug "junegunn/fzf", use:shell/completion.zsh
 zplug "b4b4r07/enhancd", use:init.sh
 zplug "paulirish/git-open", as:plugin
+zplug "tysonwolker/iterm-tab-colors"
 
 : "cd先のディレクトリのファイル一覧を表示する" && {
   [ -z "$ENHANCD_ROOT" ] && function chpwd { tree -L 1 } # enhancdがない場合
@@ -33,6 +37,26 @@ zplug "paulirish/git-open", as:plugin
 
 # compinit 以降に読み込むようにロードの優先度を変更する
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+# Theme
+#zplug "b-ryan/powerline-shell"
+
+#function powerline_precmd() {
+#    PS1="$(powerline-shell --shell zsh $?)"
+#}
+
+#function install_powerline_precmd() {
+#  for s in ${precmd_functions[@]}; do
+#    if [ "$s" = "powerline_precmd" ]; then
+#      return
+#    fi
+#  done
+#  precmd_functions+=(powerline_precmd)
+#}
+
+#if [ "$TERM" != "linux" ]; then
+#    install_powerline_precmd
+#fi
 
 # 未インストール項目をインストールする
 if ! zplug check --verbose; then
@@ -57,7 +81,6 @@ alias sketch="open -a sketch"
 alias ev="open -a evernote"
 alias la="ls -la"
 alias less="/usr/share/vim/vim80/macros/less.sh"
-
 # git alias settings
 alias gs="git status"
 alias gb="git checkout -b"
