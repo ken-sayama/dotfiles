@@ -109,13 +109,3 @@ export PATH=/Applications/MAMP/bin/php/php7.1.8/bin:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="$PATH:/Users/kensayama/.config/composer/vendor/bin"
 
-precmd() {
-   pwd=$(pwd)
-   cwd=${pwd##*/}
-   print -Pn "\e]0;$cwd\a"
-}
-
-preexec() {
-   if overridden; then return; fi
-   printf "\033]0;%s\a" "${1%% *} | $cwd"
-}
