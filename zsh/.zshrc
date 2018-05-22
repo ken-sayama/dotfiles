@@ -1,5 +1,7 @@
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
+export LANG=ja_JP.UTF-8
+
 
 autoload -U promptinit; promptinit
 # プロンプトを変更
@@ -106,3 +108,14 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH=/Applications/MAMP/bin/php/php7.1.8/bin:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="$PATH:/Users/kensayama/.config/composer/vendor/bin"
+
+precmd() {
+   pwd=$(pwd)
+   cwd=${pwd##*/}
+   print -Pn "\e]0;$cwd\a"
+}
+
+preexec() {
+   if overridden; then return; fi
+   printf "\033]0;%s\a" "${1%% *} | $cwd"
+}
