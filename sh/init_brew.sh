@@ -16,6 +16,8 @@ glib
 go
 hub
 libevent
+mysql
+node
 openssl
 pcre
 pkg-config
@@ -26,6 +28,8 @@ ruby-build
 sqlite
 tig
 tmux
+tree
+wget
 zplug
 zsh
 zsh-completions
@@ -33,5 +37,5 @@ zsh-completions
 
 for BREW in ${BREWS[@]};
 do
-  echo $BREW;
+  brew install $BREW -y;
 done
