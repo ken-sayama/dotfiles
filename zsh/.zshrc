@@ -99,6 +99,9 @@ alias ds="docker ps"
 alias da="docker attach"
 de () { docker exec -it $1 /bin/bash  }
 
+# laravel on docker
+alias dcp="docker-compose run web php artisan"
+
 # npm
 export PATH="/usr/local/share/npm/bin:$PATH"
 
@@ -109,13 +112,3 @@ export PATH=/Applications/MAMP/bin/php/php7.1.8/bin:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="$PATH:/Users/kensayama/.config/composer/vendor/bin"
 
-precmd() {
-   pwd=$(pwd)
-   cwd=${pwd##*/}
-   print -Pn "\e]0;$cwd\a"
-}
-
-preexec() {
-   if overridden; then return; fi
-   printf "\033]0;%s\a" "${1%% *} | $cwd"
-}
