@@ -99,6 +99,9 @@ alias ds="docker ps"
 alias da="docker attach"
 de () { docker exec -it $1 /bin/bash  }
 
+# laravel on docker
+alias dcp="docker-compose run web php artisan"
+
 # npm
 export PATH="/usr/local/share/npm/bin:$PATH"
 
