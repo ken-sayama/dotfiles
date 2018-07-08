@@ -7,6 +7,9 @@ module.exports = {
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
     updateChannel: 'stable',
+    hyperStatusLine: {
+      dirtyColor: 'salmon',
+    },
 
     // default font size in pixels for all tabs
     fontSize: 12,
@@ -131,7 +134,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [],
+  plugins: ["verminal", "hyper-material-theme", 'hyper-statusline', 'hyper-tab-icons-plus'],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
