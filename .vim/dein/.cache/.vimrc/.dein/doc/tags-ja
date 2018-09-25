@@ -231,6 +231,7 @@ quickrun-module-runner/python	quickrun.jax	/*quickrun-module-runner\/python*
 quickrun-module-runner/remote	quickrun.jax	/*quickrun-module-runner\/remote*
 quickrun-module-runner/shell	quickrun.jax	/*quickrun-module-runner\/shell*
 quickrun-module-runner/system	quickrun.jax	/*quickrun-module-runner\/system*
+quickrun-module-runner/terminal	quickrun.jax	/*quickrun-module-runner\/terminal*
 quickrun-module-runner/vimproc	quickrun.jax	/*quickrun-module-runner\/vimproc*
 quickrun-module-runner/vimscript	quickrun.jax	/*quickrun-module-runner\/vimscript*
 quickrun-module.available()	quickrun.jax	/*quickrun-module.available()*

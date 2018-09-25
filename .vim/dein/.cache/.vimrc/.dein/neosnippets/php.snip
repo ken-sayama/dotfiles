@@ -198,6 +198,18 @@ abbr foreach array as key => value
 	foreach (${1:array} as ${2:key} => ${3:value}) {
 		${0://code...}
 	}
+snippet bforeach
+abbr block foreach array as value
+	<?php
+	foreach (${1:array} as ${2:value}): ?>
+		${0://code...}<?php
+	endforeach; ?>
+snippet bforeachk
+abbr block foreach array as key => value
+	<?php
+	foreach (${1:array} as ${2:key} => ${3:value}): ?>
+		${0://code...}<?php
+	endforeach; ?>
 #}}}
 
 # for {{{
@@ -206,6 +218,12 @@ abbr for
 	for (${1:index} = 0; $1 < ${2}; $1${3:++}) {
 		${0://code...}
 	}
+snippet bfor
+abbr block for
+	<?php
+	for (${1:index} = 0; $1 < ${2}; $1${3:++}):
+		${0://code...}<?php
+	endfor; ?>
 #}}}
 
 # while {{{
@@ -214,6 +232,12 @@ abbr while
 	while (${1:/* condition */}) {
 		${0://code...}
 	}
+snippet bwhile
+abbr block while
+	<?php
+	while (${1:/* condition */}):
+		${0://code...}<?php
+	endwhile; ?>
 #}}}
 
 # if {{{
@@ -232,6 +256,24 @@ abbr elseif
 	elseif (${1:/* condition */}) {
 		${0://code...}
 	}
+snippet bif
+abbr blcok if
+	<?php
+	if (${1:/* condition */}):
+		${0://code...}<?php
+	endif; ?>
+snippet belse
+abbr block else
+	<?php
+	else: ?>
+		${0://code...}<?php
+	endif; ?>
+snippet belseif
+abbr block elseif
+	<?php
+	elseif (${1:/* condition */}):
+		${0://code...}<?php
+	endif; ?>
 #}}}
 
 # switch {{{
@@ -249,6 +291,16 @@ abbr switch - case
 	case ${1:/* condition */}:
 		${0://code...}
 		break;
+snippet bswitch
+abbr block switch
+	<?php
+	switch (${1:variable}):
+	case ${2:/* condition */}:
+		${0://code...}
+		break;
+	default:
+		break;
+	endswitch; ?>
 #}}}
 
 # try {{{
