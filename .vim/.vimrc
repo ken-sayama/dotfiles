@@ -121,12 +121,15 @@ if dein#load_state('/Users/kensayama/.vim/dein')
   call dein#add('hail2u/vim-css3-syntax')
   call dein#add('taichouchou2/html5.vim')
   call dein#add('kchmck/vim-coffee-script')
-  call dein#add('marcus/rsense')
+  " call dein#add('marcus/rsense')
+  call dein#add("Shougo/neocomplcache.vim")
+  call dein#add('Shougo/neocomplcache-rsense.vim')
   call dein#add('scrooloose/syntastic')
   call dein#add('Townk/vim-autoclose')
   call dein#add('scrooloose/syntastic')
   call dein#add('itchyny/lightline.vim')
   call dein#add('othree/html5.vim')
+  call dein#add('ryanoasis/vim-devicons')
 
   call dein#add('KazuakiM/neosnippet-snippets')
   call dein#add('KazuakiM/vim-qfstatusline')
@@ -248,3 +251,84 @@ let g:neocomplete#keyword_patterns['default'] = '\h\w*' "
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let g:NERDTreeShowHidden=1
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
+" Rsense用の設定
+if !exists('g:neocomplcache_omni_patterns')
+    let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+
+"rsenseのインストールフォルダがデフォルトと異なるので設定
+let g:rsenseHome = expand("/Users/kensayama/.rbenv/shims/rsense")
+let g:rsenseUseOmniFunc = 1
+
+
+" neocomplcacheの設定
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+
+
+
+" ファイル名表示
+set statusline=%F
+" 変更チェック表示
+set statusline+=%m
+" 読み込み専用かどうか表示
+set statusline+=%r
+" ヘルプページなら[HELP]と表示
+set statusline+=%h
+" プレビューウインドウなら[Prevew]と表示
+set statusline+=%w
+" これ以降は右寄せ表示
+set statusline+=%=
+" file encoding
+set statusline+=[ENC=%{&fileencoding}]
+" 現在行数/全行数
+set statusline+=[LOW=%l/%L]
+" ステータスラインを常に表示(0:表示しない、1:2つ以上ウィンドウがある時だけ表示)
+set laststatus=2
+
+let g:NERDTreeDirArrows = 1
+let NERDTreeWinSize=22
+" let NERDTreeShowHidden = 1
+
+"vim-nerdtree-syntax-highlight
+let s:rspec_red = 'FE405F'
+let s:git_orange = 'F54D27'
+let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
+let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb
+
+" vim-devicons
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+
+" dir-icons
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
+let g:DevIconsDefaultFolderOpenSymbol = ''
+" file-icons
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
+
+set guifont=RictyDiscordForPowerline\ Nerd\ Font:h14

@@ -120,6 +120,8 @@ alias ds="docker ps"
 alias da="docker attach"
 de () { docker exec -it $1 /bin/bash  }
 
+alias sp="open https://www.shopify.jp/partners"
+
 # laravel on docker
 alias dcp="docker-compose run web php artisan"
 
@@ -133,3 +135,4 @@ export PATH=/Applications/MAMP/bin/php/php7.1.8/bin:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="$PATH:/Users/kensayama/.config/composer/vendor/bin"
 
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
