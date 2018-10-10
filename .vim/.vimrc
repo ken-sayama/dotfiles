@@ -84,6 +84,7 @@ if dein#load_state('~/.vim/dein')
   call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
+  call dein#add('wsdjeg/dein-ui.vim')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
   " インデントしているコードに色をつけることができます。
