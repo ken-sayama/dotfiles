@@ -1,9 +1,8 @@
-sudo: required
-dist: trusty
+language: c
+sudo: false
 
-before_install:
-  - sudo apt-get install python
-  - pip install --user vim-vint
+notifications:
+  email: false
 
 script:
-  - vint --verbose --stat $(find . -type f -name '*.vim')
+  - ./tests.sh

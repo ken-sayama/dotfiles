@@ -136,3 +136,10 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="$PATH:/Users/kensayama/.config/composer/vendor/bin"
 
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/kensayama/Repository/shopify-webhook-lambda/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/kensayama/Repository/shopify-webhook-lambda/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/kensayama/Repository/shopify-webhook-lambda/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/kensayama/Repository/shopify-webhook-lambda/node_modules/tabtab/.completions/sls.zsh

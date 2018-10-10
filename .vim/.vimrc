@@ -73,15 +73,15 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/kensayama/.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/Users/kensayama/.vim/dein')
-  call dein#begin('/Users/kensayama/.vim/dein')
+if dein#load_state('~/.vim/dein')
+  call dein#begin('~/.vim/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/Users/kensayama/.vim/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
@@ -129,7 +129,7 @@ if dein#load_state('/Users/kensayama/.vim/dein')
   call dein#add('scrooloose/syntastic')
   call dein#add('itchyny/lightline.vim')
   call dein#add('othree/html5.vim')
-  call dein#add('ryanoasis/vim-devicons')
+  "call dein#add('ryanoasis/vim-devicons')
 
   call dein#add('KazuakiM/neosnippet-snippets')
   call dein#add('KazuakiM/vim-qfstatusline')
@@ -261,7 +261,7 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 "rsenseのインストールフォルダがデフォルトと異なるので設定
-let g:rsenseHome = expand("/Users/kensayama/.rbenv/shims/rsense")
+let g:rsenseHome = expand("~/.rbenv/shims/rsense")
 let g:rsenseUseOmniFunc = 1
 
 
@@ -314,21 +314,3 @@ let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
 let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
 let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
 let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb
-
-" vim-devicons
-let g:webdevicons_conceal_nerdtree_brackets = 1
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-
-" dir-icons
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:DevIconsEnableFoldersOpenClose = 1
-let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
-let g:DevIconsDefaultFolderOpenSymbol = ''
-" file-icons
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
-
-set guifont=RictyDiscordForPowerline\ Nerd\ Font:h14
