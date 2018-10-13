@@ -143,3 +143,6 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/kensayama/Repository/shopify-webhook-lambda/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/kensayama/Repository/shopify-webhook-lambda/node_modules/tabtab/.completions/sls.zsh
+
+alias ctags="`brew --prefix`/bin/ctags"
+export PATH="$HOME/sls/node_modules/.bin/:$PATH"

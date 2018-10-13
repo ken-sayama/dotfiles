@@ -255,15 +255,15 @@ let g:NERDTreeShowHidden=1
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 " Rsense用の設定
-if !exists('g:neocomplcache_omni_patterns')
-    let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+" if !exists('g:neocomplcache_omni_patterns')
+"     let g:neocomplcache_omni_patterns = {}
+" endif
+" let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+" autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 "rsenseのインストールフォルダがデフォルトと異なるので設定
-let g:rsenseHome = expand("~/.rbenv/shims/rsense")
-let g:rsenseUseOmniFunc = 1
+" let g:rsenseHome = expand("~/.rbenv/shims/rsense")
+" let g:rsenseUseOmniFunc = 1
 
 
 " neocomplcacheの設定
@@ -315,3 +315,4 @@ let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
 let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
 let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
 let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb
+set tags=tags
