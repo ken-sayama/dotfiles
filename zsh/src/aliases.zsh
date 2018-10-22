@@ -15,6 +15,7 @@ alias less="/usr/share/vim/vim80/macros/less.sh"
 # ---------------------------------------------------
 alias gs="git status"
 alias ga="git add ."
+alias gc="git commit -m"
 alias gb="git checkout -b"
 alias gp="git push origin"
 alias gm="git checkout master"
