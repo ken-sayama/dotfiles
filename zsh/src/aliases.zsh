@@ -21,6 +21,7 @@ alias gp="git push origin"
 alias gm="git checkout master"
 alias gl="git log --graph --pretty=oneline"
 alias gpl="git pull"
+alias gd="git diff"
 
 # Docker aliases
 # ---------------------------------------------------
