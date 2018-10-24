@@ -148,6 +148,9 @@ if dein#load_state('~/.vim/dein')
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
+  " git on vim
+  call dein#add('tpope/vim-fugitive')
+
   " Required:
   call dein#end()
   call dein#save_state()
@@ -194,12 +197,6 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:rsenseUseOmniFunc = 1
 " 静的解析
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
-
-" vimのステータスをリッチに
-set laststatus=2
-
-
-
 
 highlight Pmenu ctermbg=4
 highlight PmenuSel ctermbg=1

@@ -23,5 +23,6 @@ autocmd BufNewFile,BufRead * call s:DetectCoffee()
 autocmd BufNewFile,BufRead *.litcoffee set filetype=litcoffee
 autocmd BufNewFile,BufRead *.coffee.md set filetype=litcoffee
 
+autocmd BufReadPost *.fugitiveblame setfiletype fugitiveblame
 " Detect syntax file.
 autocmd BufNewFile,BufRead *.snip,*.snippets set filetype=neosnippet

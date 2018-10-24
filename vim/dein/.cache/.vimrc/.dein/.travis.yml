@@ -1,8 +1,19 @@
-sudo: false
+language: viml
+env:
+  - PATH="$HOME/vim/bin:$PATH"
+sudo:     false
 
 before_script:
-    - git clone https://github.com/syngan/vim-vimlint /tmp/vim-vimlint
-    - git clone https://github.com/ynkdir/vim-vimlparser /tmp/vim-vimlparser
+  - git clone https://github.com/vim/vim --depth 1 /tmp/vim && cd /tmp/vim && ./configure --prefix=$HOME/vim --with-features=huge && make && make install && cd -
+  - git clone https://github.com/thinca/vim-themis --branch v1.5.2.1 --single-branch --depth 1 /tmp/vim-themis
 
 script:
-    - sh /tmp/vim-vimlint/bin/vimlint.sh -l /tmp/vim-vimlint -p /tmp/vim-vimlparser -e EVL103=1 -e EVL102.l:_=1 autoload
+  - echo $PATH
+  - vim --cmd version --cmd quit
+  - /tmp/vim-themis/bin/themis --version
+  - /tmp/vim-themis/bin/themis tests/ -r --reporter dot
+
+notifications:
+  email: false
+
+# vim:fdl=0:sts=2:sw=2:ts=2
