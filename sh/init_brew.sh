@@ -4,7 +4,9 @@
 BREWS=(
 autoconf
 bash
+bat
 cairo
+ctags
 fontconfig
 fontforge
 freetype
@@ -15,6 +17,7 @@ git-flow
 glib
 go
 hub
+heroku
 libevent
 mysql
 node
