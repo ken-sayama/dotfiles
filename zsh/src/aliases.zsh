@@ -38,6 +38,10 @@ alias dd="docker-compose down -v"
 alias da="docker attach"
 de () { docker exec -it $1 /bin/bash  }
 
+# create-react-app
+# ---------------------------------------------------
+alias react="create-react-app"
+
 # Shopify
 # ---------------------------------------------------
 alias spy="open https://www.shopify.jp"
