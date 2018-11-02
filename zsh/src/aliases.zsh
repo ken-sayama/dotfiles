@@ -42,6 +42,11 @@ de () { docker exec -it $1 /bin/bash  }
 # ---------------------------------------------------
 alias react="create-react-app"
 
+# npm
+# ---------------------------------------------------
+alias ni="npm install"
+alias ns="npm start"
+
 # Shopify
 # ---------------------------------------------------
 alias spy="open https://www.shopify.jp"
