@@ -13,6 +13,8 @@ alias lla='ls -Gla'
 alias df='df -h'
 alias less="/usr/share/vim/vim80/macros/less.sh"
 
+alias pb="pbcopy"
+
 # Git aliases
 # ---------------------------------------------------
 alias g="git"
@@ -52,3 +54,8 @@ alias ns="npm start"
 alias spy="open https://www.shopify.jp"
 alias spyp="open https://www.shopify.jp/partners"
 
+# ngrok
+# ---------------------------------------------------
+n () {
+  ngrok http -subdomain=$1 ${"${2}":-3000}
+}
