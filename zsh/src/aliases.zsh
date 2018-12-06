@@ -22,9 +22,12 @@ alias gs="git status"
 alias ga="git add ."
 alias gc="git commit -m"
 alias gb="git checkout -b"
-alias gp="git push origin"
 alias gm="git checkout master"
 alias gl="git log --graph --pretty=oneline"
+gpb () {
+  BRANCH=$(git rev-parse --abbrev-ref HEAD)
+  git push origin $BRANCH
+}
 alias gpl="git pull"
 alias gd="git diff"
 
