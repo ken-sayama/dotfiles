@@ -61,26 +61,6 @@ if [ "$TERM" != "linux" ]; then
     install_powerline_precmd
 fi
 
-# Theme
-#zplug "b-ryan/powerline-shell"
-
-#function powerline_precmd() {
-#    PS1="$(powerline-shell --shell zsh $?)"
-#}
-
-#function install_powerline_precmd() {
-#  for s in ${precmd_functions[@]}; do
-#    if [ "$s" = "powerline_precmd" ]; then
-#      return
-#    fi
-#  done
-#  precmd_functions+=(powerline_precmd)
-#}
-
-#if [ "$TERM" != "linux" ]; then
-#    install_powerline_precmd
-#fi
-
 # 未インストール項目をインストールする
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -92,40 +72,19 @@ fi
 # コマンドをリンクして、PATH に追加し、プラグインは読み込む
 zplug load --verbose
 
+# Railsの環境変数を切り替える関数
+function use_local(){
+    export BUNDLE_GEMFILE="Gemfile.local"
+}
+
+function unuse_local(){
+    unset BUNDLE_GEMFILE
+}
 
 # export関連は以下に
 export XDG_CONFIG_HOME="$HOME/.config"
 export TERM=xterm-256color
 export PATH="/usr/local/bin:$PATH"
-
-# personal alias settings
-alias vi="vim"
-alias sketch="open -a sketch"
-alias ev="open -a evernote"
-alias la="ls -la"
-alias less="/usr/share/vim/vim80/macros/less.sh"
-# git alias settings
-alias gs="git status"
-alias gb="git checkout -b"
-alias gm="git checkout master"
-alias gadd="git add ."
-alias gcm="git commit -m"
-alias gp="git push origin"
-alias gl="git log --graph --pretty=oneline"
-
-alias dc="docker-compose"
-alias du="docker-compose up -d"
-alias dd="docker-compose down -v"
-alias ds="docker ps"
-alias da="docker attach"
-de () { docker exec -it $1 /bin/bash  }
-
-alias sp="open https://www.shopify.jp/partners"
-
-# laravel on docker
-alias dcp="docker-compose run web php artisan"
-
-# npm
 export PATH="/usr/local/share/npm/bin:$PATH"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -146,3 +105,4 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 alias ctags="`brew --prefix`/bin/ctags"
 export PATH="$HOME/sls/node_modules/.bin/:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"

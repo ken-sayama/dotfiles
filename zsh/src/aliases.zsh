@@ -30,6 +30,7 @@ gpb () {
 }
 alias gpl="git pull"
 alias gd="git diff"
+alias gdc="git show-branch | grep '*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -1 | awk -F'[]~^[]' '{print $2}'"
 
 # Docker aliases
 # ---------------------------------------------------
