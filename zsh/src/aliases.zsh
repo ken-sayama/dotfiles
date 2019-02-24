@@ -63,3 +63,7 @@ alias spyp="open https://www.shopify.jp/partners"
 n () {
   ngrok http -subdomain=$1 ${"${2}":-3000}
 }
+
+# ump3
+# ---------------------------------------------------
+alias mp3="youtube-dl --extract-audio --audio-format mp3 -o '~/Youtube/%(title)s.%(ext)s'"
