@@ -66,4 +66,4 @@ n () {
 
 # ump3
 # ---------------------------------------------------
-alias mp3="youtube-dl --extract-audio --audio-format mp3 -o '~/Youtube/%(title)s.%(ext)s'"
+alias mp3="youtube-dl --extract-audio --audio-format mp3 -o '~/Youtube/%(title)s.%(ext)s' '$1'"
