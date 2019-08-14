@@ -64,6 +64,10 @@ n () {
   ngrok http -subdomain=$1 ${"${2}":-3000}
 }
 
-# ump3
+# mp3
 # ---------------------------------------------------
-alias mp3="youtube-dl --extract-audio --audio-format mp3 -o '~/Youtube/%(title)s.%(ext)s' '$1'"
+alias mp3="youtube-dl --extract-audio --audio-format mp3 -o '~/Youtube/%(title)s.%(ext)s'"
+
+sslfile () {
+  openssl enc -e -aes-256-cbc -salt -k $1 -in $2 -out $3
+}

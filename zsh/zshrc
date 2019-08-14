@@ -110,3 +110,5 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /Users/kensayama/AWS/Lambda/layers/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/kensayama/AWS/Lambda/layers/node_modules/tabtab/.completions/slss.zsh
+
+alias bdash="sftp -P 10222 -i ~/.ssh/id_rsa_francfranc bals-ec03_ftp_bdash@52.68.144.64"
