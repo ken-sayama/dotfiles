@@ -1,0 +1,38 @@
+[core]
+	excludesfile = /Users/kensayama/.gitignore_global
+	filemode = false
+	ignorecase = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = Ken Sayama
+	email = sayamaken0402@gmail.com
+[commit]
+	template = /Users/kensayama/.stCommitMsg
+[color]
+	ui = true
+	diff = auto
+	status = auto
+  branch = auto
+[alias]
+  # 標準コマンド
+  b = branch
+  c = commit
+  cm = commit -m
+  f = fetch
+  s = status -s
+
+  # diff & preview
+  d = "!f() { args=$@; [ -z \"$args\" ] && args=HEAD; ([ \"$args\" = \"HEAD\" ] && git status --short || git diff --name-status $args | sed 's/\t/  /') | fzf --preview \"echo {} | cut -c 4- | xargs git diff --color=always $args --\" --multi --height 90% | cut -c 4-; }; f"
+
+  # add and preview
+  da = !git d | xargs git add --
+
+  # current brach push
+  ps = "!f() { args=$@; [ -z \"$args\" ] && git push origin HEAD || git push $args; }; f"
+
+
