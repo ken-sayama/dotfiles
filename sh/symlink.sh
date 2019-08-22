@@ -9,3 +9,6 @@ eval "ln -sf ~/dotfiles/zsh/zshenv ~/.zshenv"
 
 eval "curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/installer.sh"
 eval "sh ~/installer.sh ~/.vim/dein"
+
+# git
+eval "ln -sf ~/dotfiles/git/gitconfig ~/.gitconfig"
