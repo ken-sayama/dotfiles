@@ -11,7 +11,6 @@ setopt auto_cd
 setopt auto_list
 setopt auto_menu
 
-
 zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-completions'
 zplug 'zsh-users/zsh-syntax-highlighting'
@@ -28,10 +27,10 @@ zplug "b4b4r07/enhancd", use:init.sh
 zplug "paulirish/git-open", as:plugin
 zplug "tysonwolker/iterm-tab-colors"
 
-: "cd先のディレクトリのファイル一覧を表示する" && {
-  [ -z "$ENHANCD_ROOT" ] && function chpwd { tree -L 1 } # enhancdがない場合
-  [ -z "$ENHANCD_ROOT" ] || export ENHANCD_HOOK_AFTER_CD="tree -L 1" # enhancdがあるときはそのHook機構を使う
-}
+# : "cd先のディレクトリのファイル一覧を表示する" && {
+#   [ -z "$ENHANCD_ROOT" ] && function chpwd { tree -L 1 } # enhancdがない場合
+#   [ -z "$ENHANCD_ROOT" ] || export ENHANCD_HOOK_AFTER_CD="tree -L 1" # enhancdがあるときはそのHook機構を使う
+# }
 
 : "sshコマンド補完を~/.ssh/configから行う" && {
   function _ssh { compadd $(fgrep 'Host ' ~/.ssh/*/config | grep -v '*' |  awk '{print $2}' | sort) }
@@ -42,24 +41,24 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # Theme
 
-zplug "b-ryan/powerline-shell"
+#zplug "b-ryan/powerline-shell"
 
-function powerline_precmd() {
-    PS1="$(powerline-shell --shell zsh $?)"
-}
+#function powerline_precmd() {
+#    PS1="$(powerline-shell --shell zsh $?)"
+#}
+#
+#function install_powerline_precmd() {
+#  for s in ${precmd_functions[@]}; do
+#    if [ "$s" = "powerline_precmd" ]; then
+#      return
+#    fi
+#  done
+#  precmd_functions+=(powerline_precmd)
+#}
 
-function install_powerline_precmd() {
-  for s in ${precmd_functions[@]}; do
-    if [ "$s" = "powerline_precmd" ]; then
-      return
-    fi
-  done
-  precmd_functions+=(powerline_precmd)
-}
-
-if [ "$TERM" != "linux" ]; then
-    install_powerline_precmd
-fi
+#if [ "$TERM" != "linux" ]; then
+#  install_powerline_precmd
+#fi
 
 # 未インストール項目をインストールする
 if ! zplug check --verbose; then
@@ -112,3 +111,5 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 [[ -f /Users/kensayama/AWS/Lambda/layers/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/kensayama/AWS/Lambda/layers/node_modules/tabtab/.completions/slss.zsh
 
 alias bdash="sftp -P 10222 -i ~/.ssh/id_rsa_francfranc bals-ec03_ftp_bdash@52.68.144.64"
+
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
