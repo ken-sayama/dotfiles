@@ -113,3 +113,5 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 alias bdash="sftp -P 10222 -i ~/.ssh/id_rsa_francfranc bals-ec03_ftp_bdash@52.68.144.64"
 
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+export GOPATH=${HOME}/go
+export PATH=$GOPATH/bin:$PATH
