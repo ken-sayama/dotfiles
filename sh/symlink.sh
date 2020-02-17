@@ -6,9 +6,13 @@ eval "ln -sf ~/dotfiles/vim ~/.vim"
 # zsh
 eval "ln -sf ~/dotfiles/zsh/zshrc ~/.zshrc"
 eval "ln -sf ~/dotfiles/zsh/zshenv ~/.zshenv"
+eval "ln -sf ~/dotfiles/zsh/.zsh ~/.zsh"
 
 eval "curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/installer.sh"
 eval "sh ~/installer.sh ~/.vim/dein"
 
 # git
 eval "ln -sf ~/dotfiles/git/gitconfig ~/.gitconfig"
+
+# SpaceVim
+eval "ln -sf ~/dotfiles/SpaceVim.d ~/.SpaceVim.d"
