@@ -5,6 +5,23 @@ alias vi="vim"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+# alias cdd="fzf-cdr"
+# fzf-cdr () {
+#   target_dir=`cdr -l | sed 's/^[^ ][^ ]*  *//' | fzf`
+#   target_dir=`echo ${target_dir/\~/$HOME}`
+#   if [ -n "$target_dir" ]; then
+#     cd $target_dir
+#   fi
+# }
+# autoload -Uz is-at-least
+# if is-at-least 4.3.11
+# then
+#   autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+#   add-zsh-hook chpwd chpwd_recent_dirs
+#   zstyle ':chpwd:*'      recent-dirs-max 500
+#   zstyle ':chpwd:*'      recent-dirs-default yes
+#   zstyle ':completion:*' recent-dirs-insert both
+# fi
 
 alias ls="ls -G"
 alias ll="ls -Gl"
@@ -67,11 +84,6 @@ alias react="create-react-app"
 alias ni="npm install"
 alias ns="npm start"
 
-# Shopify
-# ---------------------------------------------------
-alias spy="open https://www.shopify.jp"
-alias spyp="open https://www.shopify.jp/partners"
-
 # ngrok
 # ---------------------------------------------------
 n () {
@@ -98,3 +110,4 @@ alias django="python manage.py"
 function _ssh {
   compadd `fgrep 'Host ' ~/.ssh/config | awk '{print $2}' | sort`;
 }
+
