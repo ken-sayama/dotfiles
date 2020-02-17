@@ -1,6 +1,5 @@
 # Load files
 # -----------------------------------------------
 source ~/dotfiles/zsh/src/aliases.zsh
-source ~/dotfiles/zsh/devise_settings/*.zsh
 
 XDG_CONFIG_HOME="$HOME/.config"
