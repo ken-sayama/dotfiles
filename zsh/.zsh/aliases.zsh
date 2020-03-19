@@ -6,9 +6,9 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-alias ls="ls -G"
-alias ll="ls -Gl"
-alias la='ls -Ga'
+alias ls="exa"
+alias ll="exa -abghHliS"
+alias la='exa -l'
 alias lla='ls -Gla'
 alias df='df -h'
 alias less="/usr/share/vim/vim80/macros/less.sh"

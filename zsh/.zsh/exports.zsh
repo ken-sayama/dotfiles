@@ -22,8 +22,11 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 # golang
-export GOPATH=${HOME}/go
+export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
+export PATH="$PATH:$GOPATH/bin"
+export PATH="$HOME/.goenv/bin:$PATH"
+eval "$(goenv init -)"
 
 # PHP
 export PATH="$PATH:/Users/kensayama/.config/composer/vendor/bin"
