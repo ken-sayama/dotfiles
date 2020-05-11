@@ -1,4 +1,4 @@
 vim/dein
 vim/pack
 hyper/.hyper_plugins
-zsh/devise_settings
+zsh/.zsh/devise_variables.zsh

@@ -12,6 +12,7 @@ alias la='exa -l'
 alias lla='ls -Gla'
 alias df='df -h'
 alias less="/usr/share/vim/vim80/macros/less.sh"
+alias wttr='() { curl -H "Accept-Language: ${LANG%_*}" wttr.in/"${1:-Tokyo}" }'
 
 alias pb="pbcopy"
 
@@ -97,4 +98,16 @@ alias django="python manage.py"
 # ---------------------------------------------------
 function _ssh {
   compadd `fgrep 'Host ' ~/.ssh/config | awk '{print $2}' | sort`;
+}
+
+# tmux
+# ---------------------------------------------------
+alias t="tmux"
+alias tls="tmux ls"
+alias tkill="tmux kill-server"
+
+# alias coronow="curl https://corona-stats.online"
+coronow () {
+  echo ${"${1}":/$1}
+  curl https://corona-stats.online${"${1}":/$1}
 }
