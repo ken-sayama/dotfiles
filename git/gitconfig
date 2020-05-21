@@ -34,3 +34,8 @@
 
   # current brach push
   ps = "!f() { args=$@; [ -z \"$args\" ] && git push origin HEAD || git push $args; }; f"
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
