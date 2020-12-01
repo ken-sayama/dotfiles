@@ -11,7 +11,7 @@ alias ll="ls -Gl"
 alias la='ls -Ga'
 alias lla='ls -Gla'
 alias df='df -h'
-alias less="/usr/share/vim/vim80/macros/less.sh"
+alias less="/usr/share/vim/vim81/macros/less.sh"
 
 alias pb="pbcopy"
 
