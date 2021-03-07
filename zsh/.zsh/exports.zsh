@@ -38,3 +38,11 @@ export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# direnv
+export EDITOR=vi
+eval "$(direnv hook zsh)"
+
+# expo
+export ANDROID_SDK=$HOME/Library/Android/sdk
+export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
