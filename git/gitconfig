@@ -9,7 +9,7 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [user]
-	name = Ken Sayama
+	name = ken-sayama
 	email = sayamaken0402@gmail.com
 [commit]
 	template = /Users/kensayama/.stCommitMsg
