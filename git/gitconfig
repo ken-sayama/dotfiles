@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /Users/kensayama/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	filemode = false
 	ignorecase = false
 [difftool "sourcetree"]
@@ -39,3 +39,5 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[ghq]
+	root = /Users/ken.u6gd.sayama/.ghq
