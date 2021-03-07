@@ -11,7 +11,7 @@ alias ll="exa -abghHliS"
 alias la='exa -l'
 alias lla='ls -Gla'
 alias df='df -h'
-alias less="/usr/share/vim/vim80/macros/less.sh"
+alias less="/usr/share/vim/vim81/macros/less.sh"
 alias wttr='() { curl -H "Accept-Language: ${LANG%_*}" wttr.in/"${1:-Tokyo}" }'
 
 alias pb="pbcopy"
@@ -52,6 +52,7 @@ lg()
 alias dk="docker"
 alias ds="docker ps"
 alias dkpa="docker ps -a"
+alias dcl="docker logs -f"
 alias dc="docker-compose"
 alias dcu="docker-compose up"
 alias dcr="docker-compose restart"
@@ -111,3 +112,23 @@ coronow () {
   echo ${"${1}":/$1}
   curl https://corona-stats.online${"${1}":/$1}
 }
+
+# aws dynamodb
+# ---------------------------------------------------
+alias dyb="aws dynamodb"
+
+# evans
+# ---------------------------------------------------
+alias xicaevans="evans --path ~/go/src --path ~/go/src/github.com/xica/protobuf/proto/ --proto"
+
+alias ecr-login='aws ecr get-login-password | docker login --username AWS --password-stdin $(aws sts get-caller-identity --query 'Account' --output text).dkr.ecr.ap-northeast-1.amazonaws.com'
+
+# kubernetes
+# ---------------------------------------------------
+alias ktl="kubectl"
+
+# minikube
+# ---------------------------------------------------
+alias mk="minikube"
+alias mks="minikube start --driver=hyperkit"
+alias mkd="minikube delete"
