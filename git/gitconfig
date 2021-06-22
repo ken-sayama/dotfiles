@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /Users/kensayama/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	filemode = false
 	ignorecase = false
 [difftool "sourcetree"]
@@ -9,7 +9,7 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [user]
-	name = Ken Sayama
+	name = ken-sayama
 	email = sayamaken0402@gmail.com
 [commit]
 	template = /Users/kensayama/.stCommitMsg
@@ -34,3 +34,10 @@
 
   # current brach push
   ps = "!f() { args=$@; [ -z \"$args\" ] && git push origin HEAD || git push $args; }; f"
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[ghq]
+	root = /Users/ken.u6gd.sayama/.ghq

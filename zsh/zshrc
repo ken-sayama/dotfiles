@@ -20,8 +20,10 @@ autoload -U promptinit; promptinit
 # プロンプトを変更
 prompt pure
 
+zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-completions'
+zplug 'chrissicool/zsh-256color'
 zplug 'zsh-users/zsh-syntax-highlighting'
 zplug "mollifier/anyframe"
 zplug "mollifier/cd-gitroot"
@@ -55,6 +57,7 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 #  precmd_functions+=(powerline_precmd)
 #}
 
+
 #if [ "$TERM" != "linux" ]; then
 #  install_powerline_precmd
 #fi
@@ -67,5 +70,7 @@ if ! zplug check --verbose; then
     fi
 fi
 
+
 # コマンドをリンクして、PATH に追加し、プラグインは読み込む
-zplug load --verbose
+# zplug load --verbose
+zplug load
